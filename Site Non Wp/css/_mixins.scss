@@ -1,0 +1,21 @@
+
+@mixin bottom-edge-shadow(){
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+@mixin border-radi($radius){
+
+  border-radius: $radius;
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
+  background-clip:         padding-box;
+
+}
+
+@mixin lower-radi($radius) {
+  border-radius: 0 0 $radius $radius;
+}

@@ -3,17 +3,10 @@
 // font-family: 'Josefin Slab', serif;
 // font-family: 'Lato', sans-serif;
 
-
-$logo-font: 'Josefin Slab', serif;
-$heading-font: 'Lato', sans-serif;
-$para-font: 'Lato', sans-serif;
-
-// color palette
-$dark-blue: #121b3e;
-$med-blue: #4f5984;
-$light-blue: #7090cb;
-$grey: #aaa8a6;
-$white: #f4f4f4;
+// imports
+@import "reset";
+@import "variables";
+@import "mixins";
 
 // site defaults
 
@@ -35,7 +28,7 @@ header {
   display: inline-flex;
   justify-content: space-between;
   background-color: $dark-blue;
-  box-shadow: 0 8px 6px -6px black;
+  @include bottom-edge-shadow();
 
   .logo-container {
 
@@ -46,6 +39,7 @@ header {
 
       .logo-image {
         padding-left: 20px;
+        height: 35px;
       }
 
       .logo-font {
@@ -82,6 +76,8 @@ header {
           color: $white;
           padding: 10px;
           font-size: 1.2rem;
+          text-decoration: none;
+          &:hover { color: darken($white, 50%);}
         }
 
       }
@@ -90,6 +86,50 @@ header {
 
   }
 
+}
+
+.hero-image {
+  overflow: hidden;
+  background-image: url("../imgs/Hero.jpg");
+  height: 340px;
+  @include lower-radi(10px);
+}
+
+.featured-items{
+  margin-top: 20px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+
+  li {
+    width: 25%;
+    height: 50px;
+    background-color: black;
+    @include border-radi(10px);
+  }
+}
+
+#primary-content {
+  width: 100%;
+  margin-top: 20px;
+  height: 30px;
+  background-color: black;
+  @include border-radi(10px);
+}
+
+#secondary-content {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: space-between;
+
+  article {
+    width: 48%;
+    height: 50px;
+    background-color: black;
+    @include border-radi(10px);
+  }
 }
 
 .fixed{
